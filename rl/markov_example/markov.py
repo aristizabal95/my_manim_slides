@@ -37,8 +37,8 @@ class MarkovExample(Scene):
         states_example_text.set_color_by_tex("Overheat", GRAY)
 
         actions_example_text = MathTex("A = \\{ ", "Fast", ", ", "Slow", " \\}").next_to(states_example_text, DOWN, aligned_edge=RIGHT)
-        actions_example_text.set_color_by_tex("Fast", BLUE)
-        actions_example_text.set_color_by_tex("Slow", RED)
+        actions_example_text.set_color_by_tex("Fast", RED)
+        actions_example_text.set_color_by_tex("Slow", BLUE)
 
 
         cool_state = Circle(color=GREEN, radius=0.7, fill_opacity=0.0).move_to([-1, -2, 0])
