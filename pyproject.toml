@@ -1,0 +1,11 @@
+[project]
+name = "my-manim-slides"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "manim>=0.19.1",
+    "manim-slides>=5.5.2",
+    "pyqt6",
+]
