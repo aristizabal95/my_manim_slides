@@ -292,6 +292,16 @@ wheels = [
 ]
 
 [[package]]
+name = "factored-manim"
+version = "0.1.1"
+source = { git = "https://github.com/factoredai/factored-manim?rev=0.1.1#04beddc116c08de94079b2637ecf10b4381d97f3" }
+dependencies = [
+    { name = "manim" },
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+]
+
+[[package]]
 name = "glcontext"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -532,6 +542,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/8c/5f/b69881c389032d7da2666bee0a022b6535eefc7cd634bc3e55c213d6cb8c/manim-0.19.1.tar.gz", hash = "sha256:6be7da7e973b212739d2fbfe6af4501068b8a63fdd9407660a609ae12e57b580", size = 543401, upload-time = "2025-12-01T07:21:29.704Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/e1/c02f07aa65b9c8c9f70c0ccd47c2191f27e3c7788653d365945c63fb9eb5/manim-0.19.1-py3-none-any.whl", hash = "sha256:f7201bbdc4b4f9c649cd3a13ecdf98345057dd2810227517738b523c07927228", size = 642273, upload-time = "2025-12-01T07:21:31.271Z" },
+]
+
+[[package]]
+name = "manim-ml"
+version = "0.0.24"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/87/b1/3bb365002f3b2db5413353286991d6a59e65e9aeb4be78a8b25c6311d865/manim_ml-0.0.24.tar.gz", hash = "sha256:338a8cdca237ef1075b89bfcaa8388b1019d4e942f24aacc3c4efe4f377d93d6", size = 56212, upload-time = "2023-04-14T17:40:38.286Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d7/b5/349607ab7a7580194c1a4b44297582718af66dc99c4d4be11050298f9e68/manim_ml-0.0.24-py3-none-any.whl", hash = "sha256:b112aaca5f7a196dfbb3c3a9ba241f2716b0d98e915ff1f1d963dfeea8e05da7", size = 62251, upload-time = "2023-04-14T17:40:36.347Z" },
 ]
 
 [[package]]
@@ -825,14 +844,18 @@ name = "my-manim-slides"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "factored-manim" },
     { name = "manim" },
+    { name = "manim-ml" },
     { name = "manim-slides" },
     { name = "pyqt6" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "manim", specifier = ">=0.19.1" },
+    { name = "factored-manim", git = "https://github.com/factoredai/factored-manim?rev=0.1.1" },
+    { name = "manim", specifier = "==0.19.1" },
+    { name = "manim-ml", specifier = ">=0.0.24" },
     { name = "manim-slides", specifier = ">=5.5.2" },
     { name = "pyqt6" },
 ]
